@@ -1,0 +1,151 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Car Price Prediction</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href="style.css" rel="stylesheet" type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='./bootstrap.min.css') }}">
+    <link href="./bootstrap.min.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <div class="container">
+        <a class="navbar-brand mr-4" href="/"> Car Price Estimator </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/about">About</a>
+        </div>
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+<body>
+    <img class="blue-gradient" src="{{ url_for('static', filename='/Gradient.png') }}">
+    <div class="container">
+        <div class="login">
+            <div class="col-lg-5">
+                <br><br><br>
+                <h2 class="display-4 font-weight-light">Our team</h2>
+                <p class="font-italic text-muted">This is our team, a lot of smiling happy people who work hard to empower your teams.
+                </p>
+              </div>
+            </div>
+        
+            <div class="row text-center">
+              <!-- Team item-->
+              <div class="col-xl-4 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 400px;"><img src="{{ url_for('static', filename='/bilo.jpeg') }}" alt="" style="width:200px;height:200px;" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                  <h5 class="mb-0">Bilgecan Yılmaz </h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End-->
+        
+              <!-- Team item-->
+              <div class="col-xl-4 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 400px;"><img src="{{ url_for('static', filename='/deniz.jpeg') }}" alt="" style="width:200px;height:200px;" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                  <h5 class="mb-0">Deniz Dikmen</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End-->
+        
+              <!-- Team item-->
+              <div class="col-xl-4 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 400px;"><img src="{{ url_for('static', filename='/berkay.jpeg') }}" alt="" style="width:200px;height:200px;" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                  <h5 class="mb-0">Berkay Kani </h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End-->
+        
+              <!-- Team item-->
+              <div class="col-xl-4 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 400px;"><img src="{{ url_for('static', filename='/ege.jpeg') }}" alt="" style="width:200px;height:200px;" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Ege Erdem </h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-4 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 400px;"><img src="{{ url_for('static', filename='/nur.jpeg') }}" alt="" style="width:200px;height:200px;" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Nur Kaplan </h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-xl-4 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm py-5 px-4" style="height: 400px;"><img src="{{ url_for('static', filename='/halil.jpeg') }}" alt="" style="width:200px;height:200px;" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                    <h5 class="mb-0">Halil Kunt </h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+                  <ul class="social mb-0 list-inline mt-3">
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                    <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End-->
+        
+            </div>
+          </div>
+        </div>
+
+            
+        </div>
+    </div>
+
+
+
+    <script src="./bootstrap.bundle.min.js">
+    </script>
+   <script>
+
+
+   </script>
+</body>
+
+</html>
