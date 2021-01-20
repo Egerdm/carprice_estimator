@@ -8,6 +8,12 @@ import pandas as pd
 #Initialize the flask App
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
+le_brand = pickle.load(open('Brand_Encoder.pkl', 'rb'))
+le_serie = pickle.load(open('Serie_Encoder.pkl', 'rb'))
+le_color = pickle.load(open('Color_Encoder.pkl', 'rb'))
+onehot_encoder_cekis = pickle.load(open('OHE_cekıs.pkl', 'rb'))
+onehot_encoder_gear = pickle.load(open('OHE_gear.pkl', 'rb'))
+onehot_encoder_fuel = pickle.load(open('Ohe_fuel.pkl', 'rb'))
 
 # default page of our web-app
 @app.route('/')
@@ -112,7 +118,7 @@ def predict():
                'LPG']]
     print(int_features)
     final_features = np.array(int_features)
-    prediction = rf_reg.predict(final_features)
+    prediction = model.predict(final_features)
     output = round(prediction[0], 2)
     
     brands_str = "Alfa Aston Audi BMW Bentley Cadillac Chevrolet Citroen DS Dacia Daewoo Daihatsu Dodge Ferrari Fiat Ford Honda Hyundai Kia Lada Lamborghini Lancia Lexus Lincoln Maserati Mazda Mercedes Mitsubishi Nissan Opel Peugeot Pontiac Renault Saab Seat Skoda Smart Suzuki Volkswagen"
